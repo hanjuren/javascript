@@ -1,4 +1,3 @@
-
 // 변수는 하나의 값을 저장한다.
 var userId = 1;
 var userName = 'Lee';
@@ -10,5 +9,3 @@ var users = [
 	{ id: 1, name: 'Lee' },
 	{ id: 1, name: 'Lee' },
 ];
-
-
