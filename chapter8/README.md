@@ -105,3 +105,86 @@ console.log(days); // 28
 ```
 
 ### 반복문
+반복문은 조건식의 평과 결과가 참인 경우 코드블럭을 실행한다. 그 후 여전히 조건식이 참인경우 코드블럭을 다시 실행한다.  
+
+> 자바스크립트에서는 베열을 순회할 때 사용하는 forEach메서드 객체의 프로퍼티를 열거할때 사용하는 for...in문 과 같은 반복문을 대체할 수 있는 다양한 기능을 제공한다.
+
+#### for문
+for문은 조건식이 거짓으로 평가될 때까지 코드블록을 반복 실행한다. 가장 일반적으로 사용되는 for문의 형태는 다음과 같다.
+
+```js
+for (변수 선언문 또는 할당문; 조건식; 증감식;) {
+  조건식이 참일 경우 반복 실행될 문;
+}
+```
+
+for문의 실행법
+```js
+for (var i = 0; i < 2; i++) {
+  console.log(i);
+}
+```
+실행순서
+* for문을 실행하면 변수 선언문이 실행된다. 변수 선언은 한번만 실행된다.
+* 변수 선언문이후 조건식이 실행된다. 
+* 조건문의 평과 결과가 true일때 코드블록이 실행된다.
+* 코드블록의 실행이 종료되면 증감식이 실행된다.
+* 증감식 실행 이후 평과 결과가 true면 코드블럭을 실행 false면 반복문에서 빠져나온다.
+
+#### while문
+while문은 조건식의 평과 결과가 참이면 코드블럭을 반복하여 실행한다. for문은 반복 횟수가 명확할때 주로 사용하며 while문은 횟수가 불명확 할때 주로 사용한다.
+
+```js
+var count = 0;
+
+while (count < 3) {
+  console.log(count);
+  count++;
+}
+```
+조건식이 참일경우 반복하여 실행이 된다. 조건식의 평과 결과가 항상 true일 경우에 무한루프가 된다.
+
+#### do...while문
+do...while문은 코드블록을 먼저 실행하고 조건식을 평가한다. 따라서 코드블록이 한번이상 무조건 실행이 된다.
+
+```js
+var i = 0;
+
+do {
+  console.log(i);
+  i++;
+} while (i < 3);
+```
+
+#### break문
+break문은 반복문, 레이블문에서의 코드블록을 탈출하는 역할을 한다.
+
+레이블문이란 식별자가 붙은 문을 의미한다.
+
+```js
+outer : for (var i = 0; i < 3; i++) {
+  for (var j = 0; j < 3; j++) {
+    if (i + j === 3) break outer;
+    console.log(`${i} ${j}`);
+  }
+}
+```
+
+#### continue문
+continue문의 반복문은 코드블록의 실행을 현 지점에서 중지하고 반복문의 증감식으로 실행흐름을 이동시킨다.
+
+```js
+var string = 'heLlo world';
+var search = 'l';
+var count = 0;
+
+for (var i = 0; i < string.length; i++) {
+  if (string[i] !== search) continue;
+  count++;
+}
+console.log(count);
+
+const re = new RegExp(search, 'g');
+console.log(string.match(re).length);
+```
+---
