@@ -108,3 +108,14 @@ var elem = null;
 var value = elem?.value;
 console.log(value); // undefined
 ```
+
+### null 병합 연산자
+null병합 연산자는 좌항의 피연산자가 null, undefined일 경우 우항의 피연산자를 반환하고 그렇지 않을 경우 좌항의 피연산자를 반환한다. 이는 변수의 기본값을 설정할 때 유용하다.
+
+```js
+var foo = null ?? 'dafault value';
+console.log(foo); // "defalut value"
+
+var foo = 'left value' ?? 'dafault value';
+console.log(foo); // "left value"
+```
